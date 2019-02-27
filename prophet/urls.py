@@ -1,10 +1,12 @@
-from django.conf.urls import include, url
-from django.contrib import admin
+from django.conf.urls import url
+from django.views import static
+from django.conf import settings
 
 urlpatterns = [
-    # Examples:
-    # url(r'^$', 'prophet.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+    url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATICFILES_DIRS[0]}, name='static'),
+]
 
-    url(r'^admin/', include(admin.site.urls)),
+urlpatterns += [
+    url(r'^stock/ping$', 'stock.views.ping'),
+    url(r'^stock/index$', 'stock.views.index'),
 ]
