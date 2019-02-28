@@ -5,6 +5,8 @@
 
 pip install Django==1.8.0
 
+pip install mysql-python
+
 ```python
 import django
 django.VERSION

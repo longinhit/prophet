@@ -9,4 +9,5 @@ urlpatterns = [
 urlpatterns += [
     url(r'^stock/ping$', 'stock.views.ping'),
     url(r'^stock/index$', 'stock.views.index'),
+    url(r'^stock/get_stock$', 'stock.views.get_stock'),
 ]
